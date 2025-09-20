@@ -1,1 +1,254 @@
 @import "tailwindcss";
+
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/* page background gradient & soft rounded corners similar to image */
+.hero-bg {
+  background: 
+    radial-gradient(circle at top right, rgba(15,23,42,1) 0%, transparent 30%),
+    radial-gradient(circle at bottom right, rgba(15,23,42,1) 0%, transparent 60%),
+    radial-gradient(circle at bottom left, rgba(15,23,42,1) 0%, transparent 30%),
+    radial-gradient(
+    800px 600px at 10% 12%, 
+    rgba(255,214,165,0.9) 0%, 
+    rgba(168,85,247,0.85) 45%, 
+    rgba(15,23,42,1) 200%
+    );
+  overflow: hidden;
+}
+
+/* small helper for dark inner glows (used in Orbits) */
+.glow-purple { 
+  box-shadow: 0 8px 40px rgba(124,58,237,0.25); 
+}
+
+/* Glass morphism container */
+.glass-container {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.25) 0%, 
+    rgba(255, 255, 255, 0.15) 50%, 
+    rgba(255, 255, 255, 0.1) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+}
+
+/* Shared Animation Circle for Both Pages */
+.animated-circle {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, rgba(168,85,247,0.8), rgba(255,214,165,0.6));
+  border-radius: 50%;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: continuousCircle 6s ease-in-out infinite;
+  box-shadow: 0 10px 30px rgba(168,85,247,0.4);
+}
+
+@keyframes continuousCircle {
+  0% {
+    top: -40px;
+    opacity: 0;
+    transform: translateX(-50%) scale(0.5);
+  }
+  15% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    top: calc(100% + 20px);
+    opacity: 0.8;
+    transform: translateX(-50%) scale(0.8);
+  }
+  70% {
+    top: calc(100% + 20px);
+    opacity: 0;
+    transform: translateX(-50%) scale(0.5);
+  }
+  100% {
+    top: -40px;
+    opacity: 0;
+    transform: translateX(-50%) scale(0.5);
+  }
+}
+
+/* Shared Store Image for Both Pages */
+.store-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 250px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(168,85,247,0.4);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: continuousFloat 8s ease-in-out infinite, popUpAndFloat 0.8s ease-out;
+  box-shadow: 0 20px 50px rgba(168,85,247,0.3);
+  overflow: hidden;
+}
+
+.store-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+@keyframes popUpAndFloat {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-50%, -60%) scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes continuousFloat {
+  0%, 100% { 
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    box-shadow: 0 20px 50px rgba(168,85,247,0.3);
+  }
+  25% { 
+    transform: translate(-50%, -55%) scale(1.05) rotate(1deg);
+    box-shadow: 0 25px 60px rgba(168,85,247,0.4);
+  }
+  50% { 
+    transform: translate(-50%, -45%) scale(1.02) rotate(0deg);
+    box-shadow: 0 15px 40px rgba(168,85,247,0.35);
+  }
+  75% { 
+    transform: translate(-50%, -55%) scale(1.03) rotate(-1deg);
+    box-shadow: 0 25px 55px rgba(168,85,247,0.38);
+  }
+}
+
+/* Shared Pulse Ring */
+.pulse-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 300px;
+  border: 2px solid rgba(168,85,247,0.2);
+  border-radius: 25px;
+  animation: pulseRing 4s ease-in-out infinite;
+}
+
+@keyframes pulseRing {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.1;
+  }
+}
+
+/* Remove signup-specific animations - now using shared ones */
+
+/* Floating Orbs - Shared */
+.floating-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(1px);
+}
+
+.orb-1 {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, rgba(168,85,247,0.4), rgba(255,214,165,0.3));
+  top: 20%;
+  right: 15%;
+  animation: float1 10s ease-in-out infinite;
+}
+
+.orb-2 {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, rgba(255,214,165,0.4), rgba(168,85,247,0.3));
+  bottom: 30%;
+  right: 20%;
+  animation: float2 8s ease-in-out infinite;
+}
+
+.orb-3 {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, rgba(168,85,247,0.3), rgba(255,214,165,0.4));
+  top: 60%;
+  left: 10%;
+  animation: float3 12s ease-in-out infinite;
+}
+
+/* Signup specific orbs - keep different orb configurations */
+.signup-orb-1 {
+  width: 140px;
+  height: 140px;
+  background: linear-gradient(135deg, rgba(168,85,247,0.3), rgba(255,214,165,0.2));
+  top: 15%;
+  right: 10%;
+  animation: float1 11s ease-in-out infinite;
+}
+
+.signup-orb-2 {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, rgba(255,214,165,0.4), rgba(168,85,247,0.2));
+  bottom: 25%;
+  right: 15%;
+  animation: float2 9s ease-in-out infinite;
+}
+
+.signup-orb-3 {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, rgba(168,85,247,0.4), rgba(255,214,165,0.3));
+  top: 45%;
+  right: 35%;
+  animation: float3 13s ease-in-out infinite;
+}
+
+.signup-orb-4 {
+  width: 85px;
+  height: 85px;
+  background: linear-gradient(135deg, rgba(255,214,165,0.3), rgba(168,85,247,0.4));
+  top: 70%;
+  left: 8%;
+  animation: float1 10s ease-in-out infinite;
+}
+
+/* Float animations - shared for all orbs */
+@keyframes float1 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.6; }
+  25% { transform: translate(-20px, -15px) rotate(90deg); opacity: 0.8; }
+  50% { transform: translate(15px, -10px) rotate(180deg); opacity: 0.7; }
+  75% { transform: translate(-10px, 20px) rotate(270deg); opacity: 0.9; }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  33% { transform: translate(-15px, 15px) rotate(120deg) scale(1.1); }
+  66% { transform: translate(20px, -10px) rotate(240deg) scale(0.9); }
+}
+
+@keyframes float3 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(25px, -20px) rotate(180deg); }
+}

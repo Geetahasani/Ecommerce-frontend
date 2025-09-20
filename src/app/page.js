@@ -53,11 +53,11 @@ export default function Home() {
       <div className="container mx-auto px-8 lg:px-16 pb-12">
         <div className="flex justify-between items-center text-gray-400 mt-10">
           <div className="flex gap-8 items-center">
-            <span className="opacity-80">Dreamure</span>
+            {/* <span className="opacity-80">Dreamure</span>
             <span className="opacity-80">SWITCH.WIN</span>
             <span className="opacity-80">sphere</span>
             <span className="opacity-80">PinSpace</span>
-            <span className="opacity-80">Visionix</span>
+            <span className="opacity-80">Visionix</span> */}
           </div>
           <div className="text-sm text-gray-300">© 2025 My Shop</div>
         </div>

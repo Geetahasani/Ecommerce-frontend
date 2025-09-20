@@ -1,1 +1,24 @@
 @import "tailwindcss";
+
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/* page background gradient & soft rounded corners similar to image */
+.hero-bg {
+  background: 
+    radial-gradient(circle at top right, rgba(15,23,42,1) 0%, transparent 30%),
+    radial-gradient(circle at bottom right, rgba(15,23,42,1) 0%, transparent 60%),
+    radial-gradient(circle at bottom left, rgba(15,23,42,1) 0%, transparent 30%),
+
+    radial-gradient(
+    800px 600px at 10% 12%, 
+    rgba(255,214,165,0.9) 0%, 
+    rgba(168,85,247,0.85) 45%, 
+    rgba(15,23,42,1) 200%
+    );
+  overflow: hidden;
+}
+
+/* small helper for dark inner glows (used in Orbits) */
+.glow-purple { box-shadow: 0 8px 40px rgba(124,58,237,0.25); }

@@ -1,3 +1,5 @@
+import Button from "./Buttons";
+
 // components/Nav.js
 export default function Nav() {
   return (
@@ -35,20 +37,7 @@ export default function Nav() {
           </a>
 
           {/* Register button - gentle gradient + lift */}
-          <a
-            href="#_"
-            className="group relative inline-flex items-center px-5 py-2 rounded-full font-semibold text-white"
-            style={{ background: 'linear-gradient(90deg,#7c3aed,#31167A)' }}
-            aria-label="Register"
-          >
-            <span className="relative z-10 transition-colors group-hover:text-white">Register Now</span>
-
-            {/* thin border that fades on hover */}
-            {/* <span className="absolute inset-0 rounded-full border-2 border-yellow/70 transition-opacity opacity-60 group-hover:opacity-1"></span> */}
-
-            {/* tiny lift on hover */}
-            <span className="pointer-events-none absolute -bottom-1 left-1/2 -translate-x-1/2 w-10 h-1 rounded-full bg-white/10 opacity-0 transition-all group-hover:opacity-100 group-hover:-translate-y-1"></span>
-          </a>
+          <Button name="Register" />
         </div>
       </div>
     </header>

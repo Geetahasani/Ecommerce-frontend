@@ -11,25 +11,31 @@ export default function Home() {
       <div className="container mx-auto flex flex-1 items-center px-8 lg:px-16">
         {/* Left column */}
         <div className="w-full lg:w-1/2 max-w-2xl">
-          <h1 className="text-[64px] leading-[76px] font-extrabold text-black/95 dark:text-white/95 tracking-tight">
-            Unlock Top
+          <h1 className="text-5xl md:text-6xl xl:text-7xl leading-[1.1] font-light tracking-[-0.02em] text-white mb-8">
+            Big deals.
             <br />
-            Marketing Talent
+            <span className="font-medium text-gray-100">
+              Bigger margins.
+            </span>
             <br />
-            You Thought Was
-            <br />
-            Out of Reach —
+            <span className="text-4xl md:text-5xl xl:text-6xl font-extralight text-gray-200">
+              Wholesale done right.
+            </span>
           </h1>
 
-          <h2 className="mt-4 text-[56px] leading-[68px] font-extrabold text-white">
-            Now Just One
-            <br />
-            Click Away!
+          <h2 className="text-2xl md:text-3xl xl:text-4xl leading-tight font-light text-white/90 mb-8">
+            Now just one click away
           </h2>
 
-          <div className="mt-8 flex items-center gap-6">
-            <Button name="Get Started" />
+          <p className="text-lg text-white/70 leading-relaxed mb-10 max-w-lg font-light">
+            Streamline your wholesale operations with intelligent automation and data-driven insights.
+          </p>
 
+          <div className="flex items-center gap-8">
+            <Button name="Get Started" />
+            <button className="text-white/80 hover:text-white transition-colors duration-300 text-lg font-light">
+              Learn more
+            </button>
           </div>
         </div>
 
@@ -39,17 +45,15 @@ export default function Home() {
         </div>
       </div>
 
-      {/* footer logos row */}
-      <div className="container mx-auto px-8 lg:px-16 pb-12">
-        <div className="flex justify-between items-center text-gray-400 mt-10">
-          <div className="flex gap-8 items-center">
-            {/* <span className="opacity-80">Dreamure</span>
-            <span className="opacity-80">SWITCH.WIN</span>
-            <span className="opacity-80">sphere</span>
-            <span className="opacity-80">PinSpace</span>
-            <span className="opacity-80">Visionix</span> */}
+      {/* footer */}
+      <div className="container mx-auto px-8 lg:px-16 pb-8">
+        <div className="flex justify-between items-center text-white/40 border-t border-white/10 pt-6">
+          <div className="text-sm font-light">
+            Trusted by leading wholesale businesses
           </div>
-          <div className="text-sm text-gray-300">© 2025 My Shop</div>
+          <div className="text-sm font-light">
+            © 2025 My Shop
+          </div>
         </div>
       </div>
     </div>

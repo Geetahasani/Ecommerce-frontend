@@ -20,6 +20,23 @@
 }
 
 /* small helper for dark inner glows (used in Orbits) */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #fbbf24, #f59e0b, #f97316);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 6s ease infinite;
+}
+
+
+
+
 
 .glow-purple { box-shadow: 0 8px 40px rgba(124,58,237,0.25); }
 

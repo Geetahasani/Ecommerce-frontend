@@ -4,10 +4,10 @@ import Button from "./Buttons";
 export default function Nav() {
   return (
     <header className="py-6">
-      <div className="container mx-auto px-8 lg:px-16 flex items-center justify-between">
-        <div className="flex items-center gap-6">
-          <div className="w-8 h-8 rounded-md bg-black/90 flex items-center justify-center text-white font-bold">M</div>
-          <div className="font-medium text-xl">Marketeam</div>
+      <div className="container mx-auto px-10 lg:px-16 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 rounded-md bg-black/90 flex items-center justify-center text-white font-bold">G</div>
+          <div className="font-medium text-xl">Grocify</div>
           {/* <nav className="hidden md:flex gap-6 ml-8 text-sm text-gray-800">
             <a className="hover:underline" href="#">Your Team</a>
             <a className="hover:underline" href="#">Solutions</a>
